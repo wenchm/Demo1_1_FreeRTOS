@@ -1,0 +1,1 @@
+构建项目后，将其下载到开发板上并运行测试，会发现LED1闪烁，而LED2只是点亮。这说明执行了任务函数StartDefaultTask()，但没有执行main()函数中最后的while()死循环里的代码。因为在main()函数中，执行osKernelStart()函数时，FreeRTOS就接管了CPU的控制权，所以执行不到while()循环中的代码。
